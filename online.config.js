@@ -29,8 +29,8 @@ module.exports={
          loaders: [ //加载器
             {
                 test: /\.less$/,
-                // loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!postcss!less")//不用rem
-                loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8!postcss!less")
+                loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!postcss!less")//不用rem
+                // loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8!postcss!less")
             },
             {
                 test: /\.js[x]?$/,
@@ -39,8 +39,8 @@ module.exports={
             },
             {
                 test: /\.css$/, 
-                loader:ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8") 
-                // loader:ExtractTextPlugin.extract("style", "css-loader?-minimize")//不用rem
+                // loader:ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8") 
+                loader:ExtractTextPlugin.extract("style", "css-loader?-minimize")//不用rem
             },
             {
                 test: /\.html$/, 

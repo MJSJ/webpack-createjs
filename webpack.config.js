@@ -26,9 +26,7 @@ module.exports={
         loaders: [	//加载器
             {
                 test: /\.less$/,
-                // loader: 'style!css!px2rem?remUnit=100&remPrecision=8!postcss!less'
-                loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8!postcss!less")
-                // loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!postcss!less") //不用rem
+                loader: ExtractTextPlugin.extract("style", "css-loader?-minimize!postcss!less") //不用rem
             },
             {
                 test: /\.js[x]?$/,
@@ -37,8 +35,7 @@ module.exports={
             },
             {
                 test: /\.css$/, 
-                // loader:ExtractTextPlugin.extract("style", "css-loader?-minimize") //不用rem
-                loader:ExtractTextPlugin.extract("style", "css-loader?-minimize!px2rem?remUnit=100&remPrecision=8") 
+                loader:ExtractTextPlugin.extract("style", "css-loader?-minimize") //不用rem
             },
             {
                 test: /\.html$/, 
@@ -48,6 +45,10 @@ module.exports={
                 test: /\.(png|jpg)$/, 
                 loader: 'url-loader?limit=8192&name=./img/[name].[ext]'
             },
+            { 
+                test: require.resolve('createjs-easeljs'),
+                loader: 'imports?this=>window!exports?window.createjs' 
+            }
             // {
             //     test: /\.json$/, 
             //     loader: 'json-loader'
@@ -56,6 +57,10 @@ module.exports={
     },
     postcss: [autoprefixer],
     plugins:[
+        // // This will tell Webpack how to find the main file of bower modules
+        // new webpack.ResolverPlugin(
+        //     new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
+        // ),
 
         // new  webpack.optimize.CommonsChunkPlugin('common.js', ['index', 'response']),
 
@@ -113,7 +118,13 @@ module.exports={
 
         new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ],
+
+    // resolve: {
+    //     // Add bower_components as a modules root
+    //     modulesDirectories: ['node_modules', 'bower_components']
+    // },
     devServer:{
-    	contentBase:'./src'
+    	contentBase:'./src',
+        disableHostCheck: true
     }
 };

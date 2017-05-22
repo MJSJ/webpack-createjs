@@ -21,31 +21,5 @@
 		<div class="pace-progress"></div>
 	</div>
 </div>
-
-<script type="text/javascript">
-	/**
-	 * resloader曝露两个全局对象：
-	 * resLoader
-	 * pageUtil.	pageUtil新增了boolean属性，rem=true，会改变html的font-size
-	 */
-	pageUtil.rem = true;
-
-	var loader = new resLoader({
-	    resources: [
-			"http://news.sohu.com/upload/yursile/dushue/img/shop11.png",
-	    ],
-	    onStart: function(total) {},
-	    onProgress: function(current, total) {
-	      var percent = parseInt(current / total * 100) + '%';
-	      document.querySelector('.pace-progress').innerHTML=percent;
-	    },
-	    onComplete: function(total) {
-	     
-	      // initView();
-	      setTimeout(function(){
-	      	 document.querySelector('.loading').style.display="none";
-	      },3000);
-	    }
-  	});
-  	loader.start();
-</script>
+<script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+<script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>

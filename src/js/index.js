@@ -19,7 +19,10 @@ import vcode from "../img/vcode.jpg"
 /**
  * 引入pixi测试类
  */
-import PIXITest from "./PIXITest.js"
+// import PIXITest from "./PIXITest.js"
+
+
+import CreateTest from "./createTest.js"
 
 // 反引号里可以用${}取js变量
 // 
@@ -28,8 +31,11 @@ var style = {
 	top:"50px",
 	right:"0"
 }
+// var test = new PIXITest();
+var test = new CreateTest();
 
-var test = new PIXITest();
+
+
 
 $("#main").append(template);
 
@@ -41,5 +47,7 @@ function showCanvas(){
 
 $("#click").on("click",showCanvas)
 
-
+$("#cvsContainer").on("click",()=>{
+	$("#cvsContainer").hide();
+})
 
