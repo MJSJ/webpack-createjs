@@ -57,14 +57,7 @@ module.exports={
     },
     postcss: [autoprefixer],
     plugins:[
-        // // This will tell Webpack how to find the main file of bower modules
-        // new webpack.ResolverPlugin(
-        //     new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
-        // ),
-
-        // new  webpack.optimize.CommonsChunkPlugin('common.js', ['index', 'response']),
-
-        //sprites 
+   
         new SpritesmithPlugin({
             src: {
                 cwd: path.resolve(__dirname, 'src/img/sprites'),
