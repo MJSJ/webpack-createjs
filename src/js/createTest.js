@@ -8,30 +8,28 @@ let cvsContainer = document.getElementById("cvsContainer");
 import $ from "jquery"
 import loader from "./load.js";
 
+
 export default class CreateTest{
 	/**
 	 * 构造函数
 	 * 在new的时候会自动执行
 	 */
 	constructor(){
-
         let cvs = cvsContainer.innerHTML = `<canvas id='cvs' width=${WIDTH} height=${HEIGHT}></canvas>`;
 		loader.on("complete",this.initialStage.bind(this))
-        
+
 	}
 
 	initialStage(){
 		$('.loading').hide();
 		this.stage = new createjs.Stage('cvs');
 
-		
 		this.stage.addChild(this.createSohu());
-
-
 		this.stage.addChild(this.createGrant())
 
 		this.update();
 	}
+
 	createSohu(){
 		var bitmap = new createjs.Bitmap(loader.getResult("sohu"));
 		bitmap.x = 20;
@@ -55,8 +53,6 @@ export default class CreateTest{
 		grant.x = 200;
 		return grant;
 	}
-
-
 
 	update(){
 		this.stage.update();

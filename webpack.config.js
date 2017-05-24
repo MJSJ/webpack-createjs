@@ -42,7 +42,7 @@ module.exports={
                 loader: "html" 
             },
             {
-                test: /\.(png|jpg)$/, 
+                test: /\.(png|jpg|mp3)$/, 
                 loader: 'url-loader?limit=8192&name=./img/[name].[ext]'
             },
             { 
