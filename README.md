@@ -22,16 +22,16 @@
 ├── rem.template.handlebars   # 雪碧图生成模板
 └── src
     ├── css
-	|	├── preset.less       # 可放全局less样式，比如.abs()
-	|	├── index.less        # 页面主要样式
-	|	├── loading.less      # loading
-	|	└── sprite.less       # 雪碧图生成的样式
+	|   ├── preset.less       # 可放全局less样式，比如.abs()
+	|   ├── index.less        # 页面主要样式
+	|   ├── loading.less      # loading
+	|   └── sprite.less       # 雪碧图生成的样式
 	|
 	├── img
-	|	├── sprites               # 所有需要生成雪图的都可放在这
+	|   ├── sprites               # 所有需要生成雪图的都可放在这
 	|   |	├── a.png             
-    |   |   └── b.png   
-    |   |       
+        |   |   └── b.png   
+        |   |       
 	|   └── sprite.png            #webpack执行后会把sprites中的图片生成一张雪碧图sprite.png
 	|
 	├── js                    # 以下面方式解藕
