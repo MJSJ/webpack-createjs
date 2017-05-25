@@ -8,6 +8,13 @@ let cvsContainer = document.getElementById("cvsContainer");
 import $ from "jquery"
 import loader from "./load.js";
 
+const WORDS = [
+	"左上角静态bitmap",
+	"running man 是一个spritesheet",
+	"两个小球是movieclip"
+]
+const LINEHEIGHT = 50;
+const FONT = "30px Arial"
 
 export default class CreateTest{
 	/**
@@ -22,12 +29,20 @@ export default class CreateTest{
 
 	initialStage(){
 		$('.loading').hide();
-		this.stage = new createjs.Stage('cvs');
+		this.play();
 
+		this.stage = new createjs.Stage('cvs');
 		this.stage.addChild(this.createSohu());
 		this.stage.addChild(this.createGrant())
+		this.stage.addChild(this.createText());
 
-		this.update();
+
+		let mc = this.createMovieClip();
+		this.stage.addChild(mc);
+		mc.gotoAndPlay("start");
+
+		//reqeustAnimation 
+		createjs.Ticker.addEventListener("tick", this.stage);
 	}
 
 	createSohu(){
@@ -36,6 +51,10 @@ export default class CreateTest{
 		bitmap.y = 20;
 		return bitmap;
 	}
+
+	play(){
+         createjs.Sound.play("river");
+    }
 
 	createGrant(){
 		let spriteSheet = new createjs.SpriteSheet({
@@ -54,9 +73,40 @@ export default class CreateTest{
 		return grant;
 	}
 
-	update(){
-		this.stage.update();
-        requestAnimationFrame(this.update.bind(this));
+	createMovieClip(){
+
+		 var mc = new createjs.MovieClip(null, 0, true, {start:20});
+		
+
+		 var child1 = new createjs.Shape(
+			 new createjs.Graphics().beginFill("#999999")
+				 .drawCircle(130,30,30));
+		 var child2 = new createjs.Shape(
+			 new createjs.Graphics().beginFill("#5a9cfb")
+				 .drawCircle(130,30,30));
+
+		 mc.timeline.addTween(
+			 createjs.Tween.get(child1)
+				 .to({x:0}).to({x:160}, 50).to({x:0}, 50));
+		 mc.timeline.addTween(
+			 createjs.Tween.get(child2)
+				 .to({x:160}).to({x:0}, 50).to({x:160}, 50));
+
+		 return mc;
+	}
+
+	createText(){
+		let container = new createjs.Container();
+		
+		WORDS.forEach((item,index)=>{
+			let text = new createjs.Text(item, FONT, "#ff7700");
+			text.x = 100;
+			text.y = 400+index*LINEHEIGHT;
+			text.textBaseline = "alphabetic";
+			container.addChild(text);
+		});
+		
+		return container;
 	}
 
 }

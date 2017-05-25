@@ -25,12 +25,12 @@ var style = {
 
 
 import CreateTest from "./createTest.js"
-import SoundTest from "./soundTest.js"
 
 //初始化createjs 画布
 var test = new CreateTest();
 
-new SoundTest();
+
+
 
 $("#main").append(template);
 $("#main").append(`<img id='click' src=${vcode} style=position:${style.position};top:${style.top};right:${style.right} />`)
