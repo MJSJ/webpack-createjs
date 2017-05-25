@@ -35,7 +35,7 @@
 	|   └── sprite.png            #webpack执行后会把sprites中的图片生成一张雪碧图sprite.png
 	|
 	├── js                    # 以下面方式解藕
-	|	|── index.js          # 引导index.js
+	|   |── index.js          # 引导index.js
 	|   |── game.js           # createjs游戏js
 	|   |── dom.js            # 游戏外的js
 	|   └── load.js           # 预加载js
