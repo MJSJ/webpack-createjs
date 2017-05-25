@@ -2,7 +2,7 @@
 ### webpack h5制作模板
 
 * **es6**
-* **rem**
+* **spritesheet movieclip soundjs**
 * **less**
 * **htmltemplate**
 
@@ -58,10 +58,9 @@
 ****
 #### 自适应
 
-* 所有less,css中都用px单位，会自动转化成rem，至于rem跟px的变换关系在loading.html中有设置	
-* 个别单位不需要转换的,建议**小于4px**的都不转:
+* 通过viewport设置为设计图上的宽度，比如640
+* 所有的布局都按照设计图上来，dom和canvas
 	
-		border:1px solid \#000;/*no*/
 
 ****		
 
@@ -70,17 +69,11 @@
 
 * 将需要拼接的雪碧图放在img/sprites文件夹下，运行npm run dev后会自动生成sprite.png和sprite.less
 * 此后sprites文件夹下的的文件变换会自动更改上述文件，意味着切下一张小图后，可以直接在less中引用，**且不用在less里写图的宽高，地址**
-* sprite.less中的单位依然为px,rem.template.handlebars这个模板生成的less会自动设置background-size
-* **texture-packer** 除了生成less文件外，还可以生成json文件，类似于texture-packer的功能，而且是自动生成 
 ****
 #### base64图片处理
 * 在js中加载的小图会自动转成base64
 
 ****
-####  pixi
-* 利用pageUtil缩放canvas所在容器，pixi代码的尺寸都按照640*1136
-
-		new window.pageUtil("#cvsContainer").response();
 
 ---------------------------------------
 
@@ -123,9 +116,8 @@ new HtmlWebpackPlugin({
 })
 ```
 # 更新日志
-* **解决windows shell问题**
-* **添加Pixi适配**
-* **添加线上地址转换**
+* **every step i have taken since that day**
+* **is to bring myself closer to you**
 
 
 #### Author *@yursile*
