@@ -1,7 +1,7 @@
 import "../css/index.less"
-import loader from "./load.js";
+import loader from "./load.js"
 import Main from "./main.js"
-
+import "../img/qrcode.png"
 var main = new Main();
 //两个::,main.initialStage里的this为main
 loader.on("complete",()=>{
@@ -25,11 +25,23 @@ $("#main").append(template);
 $("#main").append(`<img id='click' src=${vcode} style=position:${style.position};top:${style.top};right:${style.right} />`)
 
 
-$("#click").on("click",()=>{
+$("#click").on("touchstart",()=>{
 	$("#cvsContainer").show()
 })
 
-$("#cvsContainer").on("click",()=>{
+$("#cvsContainer").on("touchstart",()=>{
 	$("#cvsContainer").hide();
+})
+
+$(".share_box").on("touchstart",()=>{
+	$(".share_box").hide();
+})
+
+$(".ewm").on("touchstart",(e)=>{
+	e.stopPropagation();
+})
+
+$(".sohu").on("touchstart",(e)=>{
+	$(".share_box").show();
 })
 
