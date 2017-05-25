@@ -33,6 +33,14 @@ $("#cvsContainer").on("touchstart",()=>{
 	$("#cvsContainer").hide();
 })
 
+
+/**
+ * share part
+ */
+$(".sohu").on("touchstart",(e)=>{
+	$(".share_box").show();
+})
+
 $(".share_box").on("touchstart",()=>{
 	$(".share_box").hide();
 })
@@ -41,7 +49,5 @@ $(".ewm").on("touchstart",(e)=>{
 	e.stopPropagation();
 })
 
-$(".sohu").on("touchstart",(e)=>{
-	$(".share_box").show();
-})
+
 
