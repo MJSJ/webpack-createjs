@@ -23,12 +23,12 @@ export default class CreateTest{
 	 */
 	constructor(){
         let cvs = cvsContainer.innerHTML = `<canvas id='cvs' width=${WIDTH} height=${HEIGHT}></canvas>`;
-		loader.on("complete",this.initialStage.bind(this))
+		// loader.on("complete",this.initialStage.bind(this))
 
 	}
 
 	initialStage(){
-		$('.loading').hide();
+		
 		this.play();
 
 		this.stage = new createjs.Stage('cvs');

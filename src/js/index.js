@@ -1,4 +1,19 @@
 import "../css/index.less"
+
+import loader from "./load.js";
+import CreateTest from "./createTest.js"
+
+//初始化createjs 画布
+var test = new CreateTest();
+//两个::,绑定test.initialStage里的this为test
+loader.on("complete",()=>{
+	setTimeout(()=>{
+		$('.loading').hide();
+		test.initialStage()
+	},2000)
+})
+
+
 /**
  * $jquery是通过CDN载入的，在webpack中配置了externals后，依然可以在这里引入
  */
@@ -16,20 +31,11 @@ import template from "../view/testTemplate.html"
  */
 import vcode from "../img/vcode.jpg"
 // 反引号里可以用${}取js变量
-// 
 var style = {
 	position:"absolute",
 	top:"50px",
 	right:"0"
 }
-
-
-import CreateTest from "./createTest.js"
-
-//初始化createjs 画布
-var test = new CreateTest();
-
-
 
 
 $("#main").append(template);
