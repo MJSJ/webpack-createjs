@@ -1,7 +1,7 @@
 import "../css/index.less"
-import loader from "./load.js";
+import loader from "./load.js"
 import Main from "./main.js"
-
+import "../img/qrcode.png"
 var main = new Main();
 //两个::,main.initialStage里的this为main
 loader.on("complete",()=>{
@@ -31,5 +31,17 @@ $("#click").on("click",()=>{
 
 $("#cvsContainer").on("click",()=>{
 	$("#cvsContainer").hide();
+})
+
+$(".share_box").on("click",()=>{
+	$(".share_box").hide();
+})
+
+$(".ewm").on("click",(e)=>{
+	e.stopPropagation();
+})
+
+$(".sohu").on("click",(e)=>{
+	$(".share_box").show();
 })
 
