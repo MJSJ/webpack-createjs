@@ -1,8 +1,8 @@
 import "../css/index.less"
 import loader from "./load.js";
-import CreateTest from "./createTest.js"
+import Main from "./main.js"
 
-var main = new CreateTest();
+var main = new Main();
 //两个::,main.initialStage里的this为main
 loader.on("complete",()=>{
 	setTimeout(()=>{
