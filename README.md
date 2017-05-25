@@ -34,24 +34,29 @@
     |   |       
 	|   └── sprite.png            #webpack执行后会把sprites中的图片生成一张雪碧图sprite.png
 	|
-	├── js
-	|	└── index.js          # 主要的index.js
+	├── js                    # 以下面方式解藕
+	|	|── index.js          # 引导index.js
+	|   |── game.js           # createjs游戏js
+	|   |── dom.js            # 游戏外的js
+	|   └── load.js           # 预加载js
 	|
 	├── index.html            # 主html,不用在里面写loading,自适应,统计的代码
 	|
 	└── view
-		├── testTemplate.html # 模板碎片，与下面的loading.html不一样，是在index.js中动态加载的
+		├── cover.html        # h5封面html，与下面的loading.html不一样，是在index.js中动态加载的
 		├── loading.html      # loading板块的代码，含有自适应、预加载代码
 		└── statistics.html   # 所有的统计代码块
 
 ```
 
 ### 功能
-#### html模块化
 
-参考上面目录结构，
+#### 编写
 
-* loading.html指loading代码的模块，运行时index.html会插入loading.html中的内容，详细配置见hmtl-yu-plugin
+参考上面目录结构
+* 编写游戏的只专注game.js
+* 编写h5外壳的专注于cover.html和game.js
+* load.js配合loading.html；统一使用createjs自带的preload.js
 * statistics.html指统计代码的模块，跟loading一样会插入到index.html中，不过是插在body结束标签前，
 
 ****

@@ -1,53 +1,15 @@
 import "../css/index.less"
 import loader from "./load.js"
-import Main from "./main.js"
-import "../img/qrcode.png"
-var main = new Main();
-//两个::,main.initialStage里的this为main
+import Game from "./game.js"
+import $ from "zepto"
+
+var game = new Game();
+//两个::,game.initialStage里的this为game
 loader.on("complete",()=>{
 	setTimeout(()=>{
 		$('.loading').hide();
-		main.initialStage()
+		game.initialStage()
 	},2000)
 })
 
-import $ from "zepto"
-import template from "../view/testTemplate.html"
-import vcode from "../img/vcode.jpg"
-// 反引号里可以用${}取js变量
-var style = {
-	position:"absolute",
-	top:"50px",
-	right:"0"
-}
-
-$("#main").append(template);
-$("#main").append(`<img id='click' src=${vcode} style=position:${style.position};top:${style.top};right:${style.right} />`)
-
-
-$("#click").on("touchstart",()=>{
-	$("#cvsContainer").show()
-})
-
-$("#cvsContainer").on("touchstart",()=>{
-	$("#cvsContainer").hide();
-})
-
-
-/**
- * share part
- */
-$(".sohu").on("touchstart",(e)=>{
-	$(".share_box").show();
-})
-
-$(".share_box").on("touchstart",()=>{
-	$(".share_box").hide();
-})
-
-$(".ewm").on("touchstart",(e)=>{
-	e.stopPropagation();
-})
-
-
-
+import "./dom.js"
