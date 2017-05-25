@@ -5,7 +5,7 @@
 const WIDTH  = 640;
 const HEIGHT = 1136;
 
-import $ from "jquery"
+import $ from "zepto"
 import loader from "./load.js";
 
 const WORDS = [

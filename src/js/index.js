@@ -11,7 +11,7 @@ loader.on("complete",()=>{
 	},2000)
 })
 
-import $ from "jquery"
+import $ from "zepto"
 import template from "../view/testTemplate.html"
 import vcode from "../img/vcode.jpg"
 // 反引号里可以用${}取js变量

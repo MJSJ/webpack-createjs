@@ -20,7 +20,7 @@ module.exports={
     },
     devtool: 'inline-source-map',
     externals: {
-        jquery: "jQuery"
+        zepto: "Zepto"
     },
     module: {
         loaders: [	//加载器
@@ -89,7 +89,7 @@ module.exports={
 
         // new webpack.HotModuleReplacementPlugin(),//generate update.json
     	new webpack.ProvidePlugin({	//加载jq
-            $: 'jquery'
+            $: 'zepto'
         }),
 
     	new ExtractTextPlugin("css/[name].css"),	//单独使用style标签加载css并设置其路径

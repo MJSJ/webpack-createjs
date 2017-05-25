@@ -23,7 +23,7 @@ module.exports={
         chunkFilename: "js/[id].chunk.js"
     },
     externals: {
-        jquery: "jQuery"
+        zepto: "Zepto"
     },
     module: {
          loaders: [ //加载器
@@ -83,7 +83,7 @@ module.exports={
             },
         }),
     	new webpack.ProvidePlugin({	//加载jq
-            $: 'jquery'
+            $: 'zepto'
         }),
         // new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vender", /* filename= */"vendor.bundle.js"),
     	new ExtractTextPlugin("css/[name].css"),	//单独使用style标签加载css并设置其路径
