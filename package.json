@@ -4,8 +4,8 @@
   "description": "webpack-h5",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
-    "online": "webpack --config online.config.js",
+    "start": "webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0",
+    "build": "webpack --config online.config.js",
     "preview": "webpack --config online.config.js & webpack-dev-server --hot --inline --progress --watch --colors --port 8080  --host 0.0.0.0 --config online.config.js"
   },
   "repository": {
