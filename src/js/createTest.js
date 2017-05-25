@@ -2,9 +2,9 @@
 /**
  * 给canvas画布定宽高
  */
-var WIDTH  = 640;
-var HEIGHT = 1136;
-let cvsContainer = document.getElementById("cvsContainer");
+const WIDTH  = 640;
+const HEIGHT = 1136;
+
 import $ from "jquery"
 import loader from "./load.js";
 
@@ -22,7 +22,8 @@ export default class CreateTest{
 	 * 在new的时候会自动执行
 	 */
 	constructor(){
-        let cvs = cvsContainer.innerHTML = `<canvas id='cvs' width=${WIDTH} height=${HEIGHT}></canvas>`;
+		let cvsContainer = document.getElementById("cvsContainer");
+        cvsContainer.innerHTML = `<canvas id='cvs' width=${WIDTH} height=${HEIGHT}></canvas>`;
 		// loader.on("complete",this.initialStage.bind(this))
 
 	}
@@ -75,7 +76,7 @@ export default class CreateTest{
 
 	createMovieClip(){
 		 var mc = new createjs.MovieClip(null, 0, true, {start:20});
-		 
+
 		 var child1 = new createjs.Shape(
 			 new createjs.Graphics().beginFill("#999999")
 				 .drawCircle(130,30,30));
