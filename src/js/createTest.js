@@ -74,10 +74,8 @@ export default class CreateTest{
 	}
 
 	createMovieClip(){
-
 		 var mc = new createjs.MovieClip(null, 0, true, {start:20});
-		
-
+		 
 		 var child1 = new createjs.Shape(
 			 new createjs.Graphics().beginFill("#999999")
 				 .drawCircle(130,30,30));
