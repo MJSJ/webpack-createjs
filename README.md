@@ -114,9 +114,6 @@ new HtmlWebpackPlugin({
 	replaceUrl:DOMAIN + ROOT    //替换index.html中的线上地址
 })
 ```
-# 更新日志
-* **every step i have taken since that day**
-* **is to bring myself closer to you**
 
 
 #### Author *@yursile*
