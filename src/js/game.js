@@ -34,7 +34,7 @@ export default class CreateTest{
 
 	initialStage(){
 		
-		this.play();
+		this.playMusic();
 
 		this.stage = new createjs.Stage('cvs');
 		
@@ -47,12 +47,13 @@ export default class CreateTest{
 		this.stage.addChild(mc);
 		mc.gotoAndPlay("start");
 
+		//碰撞检测
 		this.collision();
 
 		//reqeustAnimation 
 		createjs.Ticker.addEventListener("tick", this.stage);
 	}
-	
+
 	collision(){
 		let redRect,blueRect;
 		let stage = this.stage
@@ -97,7 +98,7 @@ export default class CreateTest{
 		return bitmap;
 	}
 
-	play(){
+	playMusic(){
          createjs.Sound.play("river");
     }
 
