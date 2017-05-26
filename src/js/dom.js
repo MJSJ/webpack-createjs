@@ -18,7 +18,7 @@ $("#click").on("touchstart",()=>{
 })
 
 $("#cvsContainer").on("touchstart",()=>{
-	$("#cvsContainer").hide();
+	// $("#cvsContainer").hide();
 })
 
 
