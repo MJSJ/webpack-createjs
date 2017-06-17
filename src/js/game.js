@@ -41,7 +41,7 @@ export default class CreateTest{
 		this.stage.addChild(this.createSohu());
 		this.stage.addChild(this.createGrant())
 		this.stage.addChild(this.createTexts());
-
+		
 
 		let mc = this.createMovieClip();
 		this.stage.addChild(mc);
