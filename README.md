@@ -3,6 +3,7 @@
 
 * **es6**
 * **spritesheet movieclip soundjs**
+* **font-spider**
 * **less**
 * **htmltemplate**
 
