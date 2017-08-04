@@ -44,6 +44,8 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.12.1",
-    "yu-spritesmith": "0.0.2"
+    "yu-spritesmith": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-font-spider": "^0.3.6"
   }
 }
